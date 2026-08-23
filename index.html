@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narayan Homoeopathic Clinic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #020617; color: #ffffff; font-family: system-ui, sans-serif; overflow-x: hidden; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
+        .teal-gradient { background: linear-gradient(135deg, #06b6d4 0%, #0369a1 100%); }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="max-w-6xl mx-auto px-5 pb-16">
+        
+        <!-- NAVBAR -->
+        <nav class="flex justify-between items-center py-5 border-b border-white/10">
+            <h2 class="text-2xl font-extrabold m-0">NARAYAN<span class="text-cyan-500">.</span></h2>
+            <a href="#book" class="bg-cyan-500/10 text-cyan-500 px-5 py-2 rounded-full font-bold border border-cyan-500/40">Consult Now</a>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <header class="flex flex-wrap gap-10 items-center mt-16 mb-20">
+            <div class="flex-1 min-w-[300px] z-10">
+                <span class="text-cyan-500 font-semibold tracking-widest uppercase text-sm">Advanced Homoeopathy</span>
+                <h1 class="text-5xl md:text-7xl font-light leading-tight my-5">Your <strong class="text-white font-bold">doctor</strong><br> is here.</h1>
+                <p class="text-slate-400 text-lg max-w-md mb-8">Exquisite healthcare, redefined for you. Immediate access to world-class classical homoeopathy without the friction.</p>
+                <a href="#book" class="teal-gradient inline-block px-8 py-4 rounded-full text-white font-semibold shadow-[0_10px_30px_rgba(6,182,212,0.4)]">Request an Appointment</a>
+            </div>
+            <div class="flex-1 min-w-[300px] flex justify-center relative">
+                <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=600&q=80" alt="Cinematic Lungs" class="z-10 rounded-[30px] object-cover w-full max-w-md border border-cyan-500/30 shadow-[0_0_50px_rgba(6,182,212,0.2)]">
+            </div>
+        </header>
+
+        <!-- BENTO GRID -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-20">
+            <div class="glass-card p-8 flex flex-col items-center text-center">
+                <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-500 mb-5 bg-slate-800">
+                    <img src="doctor.png" alt="Dr. Santosh Singh" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <h3 class="text-2xl font-bold mb-1">Dr. Santosh Singh</h3>
+                <p class="text-cyan-500 font-semibold m-0">BHMS, MD (Homoeopathy)</p>
+            </div>
+            <div class="teal-gradient p-10 rounded-[24px] flex flex-col justify-center">
+                <h3 class="text-3xl font-bold mb-6 text-white">Expert Care, <br>Anywhere.</h3>
+                <div class="flex flex-col gap-4">
+                    <div class="bg-black/25 p-4 rounded-2xl">
+                        <strong class="block text-lg text-white">Barhalganj Clinic</strong>
+                        <span class="text-slate-200 text-sm">Patna Chauraha (Mon–Sat)</span>
+                    </div>
+                    <div class="bg-black/25 p-4 rounded-2xl">
+                        <strong class="block text-lg text-white">Gorakhpur Center</strong>
+                        <span class="text-slate-200 text-sm">Main City (Other Days)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOOKING & QR -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-5" id="book">
+            <div class="glass-card p-10">
+                <h3 class="text-2xl font-bold mb-6">Book Consultation</h3>
+                <form onsubmit="handleBooking(event)" class="flex flex-col gap-4">
+                    <input type="text" id="pName" placeholder="Patient Full Name" required class="w-full p-4 rounded-xl bg-black/40 border border-white/20 text-white outline-none">
+                    <input type="tel" id="pPhone" placeholder="Phone Number" required class="w-full p-4 rounded-xl bg-black/40 border border-white/20 text-white outline-none">
+                    <input type="text" id="pReason" placeholder="Reason for Visit" class="w-full p-4 rounded-xl bg-black/40 border border-white/20 text-white outline-none">
+                    <button type="submit" class="bg-green-500 text-white p-4 rounded-xl font-bold mt-2">Book via WhatsApp 💬</button>
+                </form>
+            </div>
+
+            <div class="glass-card p-10 text-center flex flex-col items-center justify-center">
+                <h3 class="text-2xl font-bold mb-2">Scan to Visit & Review</h3>
+                <p class="text-slate-400 text-sm mb-5">Place this on your clinic desk.</p>
+                <div class="bg-white p-4 rounded-2xl inline-block">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://narayanhomeopathy.com" alt="QR Code" class="w-40 h-40 block">
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center mt-20 py-8 border-t border-white/10 text-slate-400 text-sm">
+            <p>© 2026 Narayan Homoeopathic Clinic. All Rights Reserved.<br>
+            <span class="mt-2 inline-block">Designed & Created by <strong class="text-cyan-500">Deepak Sisodiya</strong></span></p>
+        </footer>
+    </div>
+
+    <script>
+        function handleBooking(e) {
+            e.preventDefault();
+            const name = document.getElementById('pName').value;
+            const phone = document.getElementById('pPhone').value;
+            const reason = document.getElementById('pReason').value;
+            const msg = `Hello Dr. Santosh Singh, I want to book an appointment.\nName: ${name}\nPhone: ${phone}\nReason: ${reason}`;
+            window.open(`https://wa.me/919415000000?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
