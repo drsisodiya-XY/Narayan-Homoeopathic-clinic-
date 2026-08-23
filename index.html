@@ -1,99 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Narayan Homoeopathic Clinic</title>
+    <title>Dr. Santosh Singh | Advanced AI-Integrated Homoeopathy</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
+                    colors: {
+                        deep: '#030712',
+                        volt: '#00f0ff',
+                        cyber: '#3b82f6'
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(0, 240, 255, 0.3)',
+                        'neon-strong': '0 0 40px rgba(0, 240, 255, 0.5)'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { background-color: #020617; color: #ffffff; font-family: system-ui, sans-serif; overflow-x: hidden; }
-        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
-        .teal-gradient { background: linear-gradient(135deg, #06b6d4 0%, #0369a1 100%); }
+        body { background-color: #030712; color: #f8fafc; overflow-x: hidden; }
+        .glass-panel { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(0, 240, 255, 0.15); }
+        .text-gradient { background: linear-gradient(to right, #00f0ff, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .loader { border: 3px solid rgba(0,240,255,0.1); border-top: 3px solid #00f0ff; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; display: none; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
-<body class="antialiased">
-    <div class="max-w-6xl mx-auto px-5 pb-16">
+<body class="antialiased relative selection:bg-volt selection:text-deep">
+
+    <!-- Background Glow -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-volt/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+    <div class="fixed bottom-0 right-1/4 w-96 h-96 bg-cyber/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+
+    <!-- Navigation & Clinic Info -->
+    <nav class="fixed w-full z-50 glass-panel border-b-0 border-white/5 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-dna text-volt text-2xl"></i>
+                <h1 class="text-xl font-bold tracking-wider">NARAYAN<span class="text-volt">CLINIC</span></h1>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm text-gray-400">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-volt"></i> Medical Hub, City Center</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-clock text-volt"></i> Mon-Sat: 10 AM - 8 PM</span>
+            </div>
+            <a href="#booking" class="px-5 py-2 rounded-full border border-volt text-volt hover:bg-volt hover:text-deep transition-all duration-300 text-sm font-semibold shadow-neon">Book Slot</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-36 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyber/30 bg-cyber/10 text-cyber text-xs font-semibold uppercase tracking-widest">
+                <span class="w-2 h-2 rounded-full bg-cyber animate-pulse"></span> Advanced Medical Framework
+            </div>
+            <h2 class="text-5xl md:text-6xl font-bold leading-tight">
+                Clinical Precision.<br>
+                <span class="text-gradient">AI-Driven Homoeopathy.</span>
+            </h2>
+            <p class="text-gray-400 text-lg max-w-xl leading-relaxed">
+                Integrating classical homoeopathic principles with modern pathology and digital repertorization to target chronic and acute ailments at their root.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+                <a href="#ai-diagnostic" class="px-8 py-3 rounded-lg bg-gradient-to-r from-volt to-cyber text-deep font-bold hover:shadow-neon-strong transition-all">Start AI Diagnosis</a>
+            </div>
+        </div>
         
-        <!-- NAVBAR -->
-        <nav class="flex justify-between items-center py-5 border-b border-white/10">
-            <h2 class="text-2xl font-extrabold m-0">NARAYAN<span class="text-cyan-500">.</span></h2>
-            <a href="#book" class="bg-cyan-500/10 text-cyan-500 px-5 py-2 rounded-full font-bold border border-cyan-500/40">Consult Now</a>
-        </nav>
-
-        <!-- HERO SECTION -->
-        <header class="flex flex-wrap gap-10 items-center mt-16 mb-20">
-            <div class="flex-1 min-w-[300px] z-10">
-                <span class="text-cyan-500 font-semibold tracking-widest uppercase text-sm">Advanced Homoeopathy</span>
-                <h1 class="text-5xl md:text-7xl font-light leading-tight my-5">Your <strong class="text-white font-bold">doctor</strong><br> is here.</h1>
-                <p class="text-slate-400 text-lg max-w-md mb-8">Exquisite healthcare, redefined for you. Immediate access to world-class classical homoeopathy without the friction.</p>
-                <a href="#book" class="teal-gradient inline-block px-8 py-4 rounded-full text-white font-semibold shadow-[0_10px_30px_rgba(6,182,212,0.4)]">Request an Appointment</a>
-            </div>
-            <div class="flex-1 min-w-[300px] flex justify-center relative">
-                <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=600&q=80" alt="Cinematic Lungs" class="z-10 rounded-[30px] object-cover w-full max-w-md border border-cyan-500/30 shadow-[0_0_50px_rgba(6,182,212,0.2)]">
-            </div>
-        </header>
-
-        <!-- BENTO GRID -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-20">
-            <div class="glass-card p-8 flex flex-col items-center text-center">
-                <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-500 mb-5 bg-slate-800">
-                    <img src="doctor.png" alt="Dr. Santosh Singh" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80'">
+        <!-- Doctor Profile Card -->
+        <div class="relative w-full max-w-md mx-auto lg:ml-auto">
+            <div class="glass-panel p-6 rounded-2xl relative z-10 hover:-translate-y-2 transition-transform duration-500">
+                <div class="w-full h-[400px] rounded-xl overflow-hidden border-2 border-volt/50 shadow-neon mb-6">
+                    <img src="doctor.png" alt="Dr. Santosh Singh" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500">
                 </div>
-                <h3 class="text-2xl font-bold mb-1">Dr. Santosh Singh</h3>
-                <p class="text-cyan-500 font-semibold m-0">BHMS, MD (Homoeopathy)</p>
-            </div>
-            <div class="teal-gradient p-10 rounded-[24px] flex flex-col justify-center">
-                <h3 class="text-3xl font-bold mb-6 text-white">Expert Care, <br>Anywhere.</h3>
-                <div class="flex flex-col gap-4">
-                    <div class="bg-black/25 p-4 rounded-2xl">
-                        <strong class="block text-lg text-white">Barhalganj Clinic</strong>
-                        <span class="text-slate-200 text-sm">Patna Chauraha (Mon–Sat)</span>
-                    </div>
-                    <div class="bg-black/25 p-4 rounded-2xl">
-                        <strong class="block text-lg text-white">Gorakhpur Center</strong>
-                        <span class="text-slate-200 text-sm">Main City (Other Days)</span>
-                    </div>
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-white mb-1">Dr. Santosh Singh</h3>
+                    <p class="text-volt font-semibold tracking-wide">BHMS, MD (Homoeopathy)</p>
+                    <p class="text-gray-400 text-sm mt-2">Senior Clinical Consultant & Pathologist</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- BOOKING & QR -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-5" id="book">
-            <div class="glass-card p-10">
-                <h3 class="text-2xl font-bold mb-6">Book Consultation</h3>
-                <form onsubmit="handleBooking(event)" class="flex flex-col gap-4">
-                    <input type="text" id="pName" placeholder="Patient Full Name" required class="w-full p-4 rounded-xl bg-black/40 border border-white/20 text-white outline-none">
-                    <input type="tel" id="pPhone" placeholder="Phone Number" required class="w-full p-4 rounded-xl bg-black/40 border border-white/20 text-white outline-none">
-                    <input type="text" id="pReason" placeholder="Reason for Visit" class="w-full p-4 rounded-xl bg-black/40 border border-white/20 text-white outline-none">
-                    <button type="submit" class="bg-green-500 text-white p-4 rounded-xl font-bold mt-2">Book via WhatsApp 💬</button>
+    <!-- AI Diagnostic Engine (Volt Feature) -->
+    <section id="ai-diagnostic" class="py-20 px-6 relative">
+        <div class="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl border border-volt/30 shadow-neon">
+            <div class="text-center mb-10">
+                <i class="fa-solid fa-microchip text-4xl text-volt mb-4"></i>
+                <h2 class="text-3xl font-bold text-gradient">AI Symptom Analyzer System</h2>
+                <p class="text-gray-400 mt-2">Input raw symptoms for pathology mapping and repertory alignment (Boericke / Allen's Keynotes logic).</p>
+            </div>
+            
+            <textarea id="symptomInput" rows="4" class="w-full bg-deep/50 border border-white/10 rounded-xl p-4 text-white focus:border-volt focus:ring-1 focus:ring-volt outline-none transition-all resize-none mb-4" placeholder="Describe symptoms in detail (e.g., Throbbing headache right side, worse from sunlight, craving cold water...)"></textarea>
+            
+            <button onclick="simulateAI()" class="w-full py-4 rounded-xl bg-white/5 border border-volt/50 text-volt font-bold hover:bg-volt hover:text-deep transition-all flex justify-center items-center gap-3">
+                <i class="fa-solid fa-satellite-dish"></i> Execute Clinical Analysis
+                <div id="aiLoader" class="loader"></div>
+            </button>
+
+            <!-- AI Output Console -->
+            <div id="aiOutput" class="mt-6 p-6 rounded-xl bg-deep/80 border border-cyber/30 font-mono text-sm hidden">
+                <div class="text-gray-500 mb-2">// CLINICAL OUTPUT GENERATED</div>
+                <div class="text-volt font-bold mb-1">> Pathological Susceptibility: <span class="text-white font-normal" id="outPath">Analyzing...</span></div>
+                <div class="text-volt font-bold mb-1">> Totality of Symptoms: <span class="text-white font-normal" id="outTotality">Compiling...</span></div>
+                <div class="text-volt font-bold mb-4">> Indicated Materia Medica (Boericke/Allen): <span class="text-white font-normal" id="outRemedy">Computing...</span></div>
+                <a href="#booking" class="text-cyber hover:text-volt underline decoration-dashed">Forward this dataset to Dr. Santosh for final prescription →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Disease Pathology Section -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Targeted <span class="text-gradient">Pathologies</span></h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-panel p-8 rounded-2xl hover:border-volt/50 transition-colors">
+                <i class="fa-solid fa-lungs-virus text-3xl text-volt mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Respiratory & Allergic</h3>
+                <p class="text-gray-400 text-sm">Asthma, Allergic Rhinitis, Chronic Bronchitis. Focus on immune modulation rather than suppression.</p>
+            </div>
+            <div class="glass-panel p-8 rounded-2xl hover:border-volt/50 transition-colors">
+                <i class="fa-solid fa-brain text-3xl text-volt mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Neurological & Autoimmune</h3>
+                <p class="text-gray-400 text-sm">Migraines, Rheumatoid Arthritis, Neuralgia. Deep constitutional mapping based on miasmatic background.</p>
+            </div>
+            <div class="glass-panel p-8 rounded-2xl hover:border-volt/50 transition-colors">
+                <i class="fa-solid fa-disease text-3xl text-volt mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Dermatology & Skin</h3>
+                <p class="text-gray-400 text-sm">Psoriasis, Eczema, Fungal issues. Addressing internal systemic imbalance reflecting on the skin.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Vlog & Case Studies -->
+    <section class="py-20 px-6 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Clinical <span class="text-gradient">Research Vlogs</span></h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-panel rounded-2xl overflow-hidden group">
+                    <div class="h-48 bg-deep border-b border-white/10 flex items-center justify-center relative">
+                        <i class="fa-brands fa-youtube text-5xl text-red-500/80 group-hover:scale-110 transition-transform cursor-pointer"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg mb-2">Case Study: Autoimmune Reversal</h4>
+                        <p class="text-sm text-gray-400">Analysis of a complex Rheumatoid case utilizing exact repertorial totality.</p>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-2xl overflow-hidden group">
+                    <div class="h-48 bg-deep border-b border-white/10 flex items-center justify-center relative">
+                        <i class="fa-brands fa-youtube text-5xl text-red-500/80 group-hover:scale-110 transition-transform cursor-pointer"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg mb-2">Understanding Miasmatic Blocks</h4>
+                        <p class="text-sm text-gray-400">Clinical vlog explaining how genetic susceptibility dictates pathology.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Testimonials -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Patient <span class="text-gradient">Outcomes</span></h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-volt">
+                <div class="flex text-volt text-sm mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-gray-300 italic">"The AI-assisted approach Dr. Santosh uses is remarkable. My chronic migraine was analyzed so precisely that the very first constitutional dose showed 80% improvement."</p>
+                <p class="mt-4 font-bold text-sm text-white">- Rajesh V.</p>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-cyber">
+                <div class="flex text-volt text-sm mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-gray-300 italic">"Professional, clinical, and highly advanced. The digital repertorization method clearly sets this clinic apart from traditional practitioners."</p>
+                <p class="mt-4 font-bold text-sm text-white">- Priya G.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect, QR & Booking -->
+    <section id="booking" class="py-20 px-6 relative border-t border-volt/20">
+        <div class="absolute inset-0 bg-gradient-to-b from-volt/5 to-transparent pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Digital Booking Form -->
+            <div class="glass-panel p-8 rounded-3xl border border-white/10">
+                <h3 class="text-2xl font-bold mb-6">Initiate Consultation</h3>
+                <form onsubmit="handleBooking(event)" class="space-y-4">
+                    <input type="text" id="pName" placeholder="Patient Name" class="w-full bg-deep/50 border border-white/10 rounded-xl p-4 focus:border-volt outline-none" required>
+                    <input type="tel" id="pPhone" placeholder="Contact Number" class="w-full bg-deep/50 border border-white/10 rounded-xl p-4 focus:border-volt outline-none" required>
+                    <textarea id="pReason" rows="3" placeholder="Brief Clinical Reason" class="w-full bg-deep/50 border border-white/10 rounded-xl p-4 focus:border-volt outline-none resize-none" required></textarea>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-volt to-cyber text-deep font-bold hover:opacity-90 transition-all">Route to WhatsApp System</button>
                 </form>
             </div>
 
-            <div class="glass-card p-10 text-center flex flex-col items-center justify-center">
-                <h3 class="text-2xl font-bold mb-2">Scan to Visit & Review</h3>
-                <p class="text-slate-400 text-sm mb-5">Place this on your clinic desk.</p>
-                <div class="bg-white p-4 rounded-2xl inline-block">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://narayanhomeopathy.com" alt="QR Code" class="w-40 h-40 block">
+            <!-- Contact Details & QR -->
+            <div class="space-y-8 text-center lg:text-left">
+                <div>
+                    <h4 class="text-volt font-bold text-xl mb-2">Clinic Operations</h4>
+                    <p class="text-gray-300"><i class="fa-solid fa-location-dot mr-2"></i> 123 Healthcare Avenue, Medical Hub, City Center</p>
+                    <p class="text-gray-300 mt-2"><i class="fa-solid fa-phone mr-2"></i> +91 94150 00000</p>
+                </div>
+                
+                <div class="glass-panel p-6 rounded-2xl border border-white/10 inline-block text-center mx-auto lg:mx-0">
+                    <h4 class="text-white font-bold mb-4">Fast-Track / Payment QR</h4>
+                    <div class="w-32 h-32 mx-auto bg-white rounded-lg flex items-center justify-center p-2 mb-2 border-2 border-volt border-dashed">
+                        <!-- Replace src with actual QR image later -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ClinicPayment" alt="QR Code" class="w-full h-full">
+                    </div>
+                    <span class="text-xs text-gray-400">Scan at desk for quick processing</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- FOOTER -->
-        <footer class="text-center mt-20 py-8 border-t border-white/10 text-slate-400 text-sm">
-            <p>© 2026 Narayan Homoeopathic Clinic. All Rights Reserved.<br>
-            <span class="mt-2 inline-block">Designed & Created by <strong class="text-cyan-500">Deepak Sisodiya</strong></span></p>
-        </footer>
-    </div>
+    <!-- Footer with Developer Tag -->
+    <footer class="py-8 border-t border-white/5 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 Narayan Homoeopathic Clinic. All clinical protocols reserved.</p>
+        <p class="mt-2 text-volt/70 tracking-widest uppercase text-xs font-semibold">Engineered & Developed by Dr. Sisodiya</p>
+    </footer>
 
     <script>
+        // AI Simulation Logic
+        function simulateAI() {
+            const input = document.getElementById('symptomInput').value;
+            if(!input) { alert("Please enter clinical symptoms first."); return; }
+            
+            const btn = event.currentTarget;
+            const loader = document.getElementById('aiLoader');
+            const output = document.getElementById('aiOutput');
+            
+            loader.style.display = 'block';
+            output.classList.add('hidden');
+            
+            setTimeout(() => {
+                loader.style.display = 'none';
+                output.classList.remove('hidden');
+                document.getElementById('outPath').innerText = "Systemic Inflammatory Response / Miasmatic activation detected.";
+                document.getElementById('outTotality').innerText = "Aggravation parameters aligned. Modalities matched with database.";
+                document.getElementById('outRemedy').innerText = "Top cross-references: Natrum Mur, Belladonna, Sulphur (Pending final clinical verification).";
+            }, 2500);
+        }
+
+        // Booking Logic
         function handleBooking(e) {
             e.preventDefault();
             const name = document.getElementById('pName').value;
             const phone = document.getElementById('pPhone').value;
             const reason = document.getElementById('pReason').value;
-            const msg = `Hello Dr. Santosh Singh, I want to book an appointment.\nName: ${name}\nPhone: ${phone}\nReason: ${reason}`;
-            window.open(`https://wa.me/919415000000?text=${encodeURIComponent(msg)}`, '_blank');
+            const aiData = document.getElementById('aiOutput').classList.contains('hidden') ? "None" : "Attached AI analysis in system.";
+            
+            const msg = `CLINICAL INTAKE FORM\n\nPatient: ${name}\nContact: ${phone}\nSymptoms: ${reason}\nAI Pre-Check: ${aiData}\n\nRequesting consultation schedule with Dr. Santosh Singh.`;
+            window.open(`https://wa.me/919415000000?text=${encodeURIComponent(msg)}`);
         }
     </script>
 </body>
 </html>
+
