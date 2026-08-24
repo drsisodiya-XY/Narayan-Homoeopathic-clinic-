@@ -1,347 +1,274 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Narayan Homoeopathic Clinic | Dr. Santosh Singh (BHMS, MD)</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
-                    colors: {
-                        k_teal: '#0d9488',
-                        k_dark: '#030712',
-                        k_card: '#0f172a',
-                        k_surface: '#1e293b'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .chat-bubble { max-width: 85%; padding: 12px 16px; border-radius: 12px; margin-bottom: 10px; font-size: 0.95rem; line-height: 1.5; }
-        .chat-bot { background: #1e293b; color: #f8fafc; border-bottom-left-radius: 2px; }
-        .chat-user { background: #0d9488; color: white; border-bottom-right-radius: 2px; align-self: flex-end; margin-left: auto; }
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Narayan Homoeopathic Clinic — Dr. Santosh Singh, BHMS, MD. Personalized homoeopathic consultation in Barhalganj and Gorakhpur.">
+<title>Narayan Homoeopathic Clinic | Dr. Santosh Singh</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:['Plus Jakarta Sans','sans-serif'],display:['Playfair Display','serif']},
+colors:{ink:'#07131f',navy:'#0a1726',cyan:'#20d3d8',aqua:'#8df4ef',mist:'#eefbfb'}}}}
+</script>
+<style>
+html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',sans-serif;background:#f7fbfc;color:#07131f}
+.glass{background:rgba(255,255,255,.72);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.45)}
+.glow{box-shadow:0 0 55px rgba(32,211,216,.16)} .card{transition:.35s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 60px rgba(7,19,31,.12)}
+.hero-grid{background-image:radial-gradient(circle at 75% 25%,rgba(32,211,216,.18),transparent 28%),linear-gradient(135deg,#07131f,#0b2134 58%,#07131f)}
+.wave{background:linear-gradient(135deg,transparent 49%,rgba(32,211,216,.18) 50%,transparent 51%) 0 0/35px 35px}
+.chat{max-height:430px;overflow:auto}.bot{background:#0b1c2d;color:#fff;border-radius:18px 18px 18px 4px}
+.user{background:#20d3d8;color:#06202a;border-radius:18px 18px 4px 18px}
+.reveal{animation:rise .7s ease both}@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+</style>
 </head>
-<body class="bg-k_dark text-slate-100 antialiased selection:bg-k_teal selection:text-white">
+<body>
 
-    <!-- TOP STICKY NAVIGATION -->
-    <header class="border-b border-white/10 sticky top-0 z-50 bg-k_dark/95 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-k_teal flex items-center justify-center text-white font-bold text-xl shadow-lg">N</div>
-                <div>
-                    <h1 class="font-extrabold tracking-wider text-sm">NARAYAN CLINIC</h1>
-                    <p class="text-[10px] text-k_teal uppercase tracking-widest font-semibold">Homoeopathy & AI</p>
-                </div>
-            </div>
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-k_teal transition">About</a>
-                <a href="#conditions" class="hover:text-k_teal transition">Conditions</a>
-                <a href="#ai" class="hover:text-k_teal transition">Narayan AI</a>
-                <a href="#research" class="hover:text-k_teal transition">Research & Vlogs</a>
-                <a href="#locations" class="hover:text-k_teal transition">Locations</a>
-            </nav>
-            <a href="#book" class="bg-k_teal text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-teal-600 transition shadow-lg shadow-teal-900/40">Book Slot</a>
-        </div>
-    </header>
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50">
+<nav class="glass mx-3 mt-3 rounded-2xl px-5 lg:px-10 py-3 flex items-center justify-between shadow-lg">
+<a href="#home" class="flex items-center gap-3">
+<span class="w-11 h-11 rounded-xl bg-navy text-cyan flex items-center justify-center"><i class="fa-solid fa-leaf text-xl"></i></span>
+<span><b class="block tracking-[.18em] text-sm">NARAYAN</b><small class="text-cyan font-bold tracking-widest">HOMOEOPATHIC CLINIC</small></span>
+</a>
+<div class="hidden lg:flex gap-7 text-sm font-semibold">
+<a href="#home">Home</a><a href="#doctor">Doctor</a><a href="#conditions">Conditions</a><a href="#services">Care</a><a href="#ai">Narayan AI</a><a href="#research">Research</a><a href="#contact">Contact</a>
+</div>
+<a href="#appointment" class="hidden sm:block bg-navy text-white rounded-full px-5 py-3 text-sm font-bold">Book Appointment</a>
+<button onclick="document.getElementById('mobileNav').classList.toggle('hidden')" class="lg:hidden w-10 h-10 rounded-full bg-navy text-white"><i class="fa-solid fa-bars"></i></button>
+</nav>
+<div id="mobileNav" class="hidden mx-3 glass rounded-2xl p-5 mt-2 shadow-xl">
+<div class="grid grid-cols-2 gap-3 text-sm font-semibold"><a href="#doctor">Doctor</a><a href="#conditions">Conditions</a><a href="#services">Care</a><a href="#ai">Narayan AI</a><a href="#research">Research</a><a href="#appointment">Appointment</a></div>
+</div>
+</header>
 
-    <!-- SECTION 1: HERO (Reference Layout: Left Intro, Right Doctor Card) -->
-    <section class="max-w-7xl mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-k_teal/10 border border-k_teal/30 text-k_teal text-xs font-bold uppercase tracking-wider mb-6">
-                <span class="w-2 h-2 rounded-full bg-k_teal animate-ping"></span> Personalised Care. Thoughtful Healing.
-            </div>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                Bringing Quality <span class="text-k_teal">Homoeopathic Care</span> to You and Your Family
-            </h1>
-            <p class="text-slate-400 text-base sm:text-lg mb-8 leading-relaxed">
-                Advanced constitutional treatment led by <strong class="text-white">Dr. Santosh Singh (BHMS, MD)</strong>. Precise pathological understanding designed for deep-rooted recovery without suppression.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#book" class="bg-k_teal text-white px-8 py-4 rounded-xl font-bold hover:bg-teal-600 transition shadow-xl shadow-teal-900/50">Book Consultation</a>
-                <a href="#ai" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">Ask Narayan AI</a>
-            </div>
-        </div>
+<!-- HERO -->
+<section id="home" class="hero-grid min-h-screen text-white pt-28">
+<div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid lg:grid-cols-2 gap-12 items-center">
+<div class="reveal">
+<div class="inline-flex items-center gap-2 border border-cyan/30 bg-white/5 rounded-full px-4 py-2 text-xs font-bold text-aqua mb-7"><span class="w-2 h-2 rounded-full bg-cyan animate-pulse"></span>PERSONALISED HOMOEOPATHIC CARE</div>
+<h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.02] mb-7">Care that looks at the <span class="text-cyan">whole you.</span></h1>
+<p class="text-slate-300 max-w-xl text-lg leading-8 mb-9">Narayan Homoeopathic Clinic brings personalised consultation, careful case analysis and long-term patient guidance to Barhalganj and Gorakhpur.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#appointment" class="bg-cyan text-ink px-7 py-4 rounded-full font-extrabold">Book Consultation <i class="fa-solid fa-arrow-right ml-2"></i></a>
+<a href="#ai" class="border border-white/20 px-7 py-4 rounded-full font-bold hover:bg-white/10">Explore Narayan AI</a>
+</div>
+<div class="flex flex-wrap gap-5 mt-9 text-xs text-slate-400"><span><i class="fa-solid fa-location-dot text-cyan mr-2"></i>Barhalganj + Gorakhpur</span><span><i class="fa-solid fa-user-doctor text-cyan mr-2"></i>Dr. Santosh Singh, BHMS, MD</span></div>
+</div>
+<div class="relative">
+<div class="absolute -inset-5 rounded-[40px] bg-cyan/10 blur-3xl"></div>
+<div class="relative rounded-[38px] overflow-hidden border border-white/10 bg-slate-800/50 shadow-2xl min-h-[520px]">
+<img src="doctor.png" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=85'" alt="Dr. Santosh Singh" class="w-full h-[520px] object-cover object-top">
+<div class="absolute left-5 bottom-5 glass text-ink rounded-2xl px-5 py-4"><b>Dr. Santosh Singh</b><br><small>BHMS, MD (Homoeopathy)</small></div>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="relative">
-            <div class="absolute -inset-1 bg-gradient-to-r from-k_teal to-blue-600 rounded-3xl blur-xl opacity-20"></div>
-            <div class="relative bg-k_card border border-white/10 p-4 rounded-3xl overflow-hidden shadow-2xl">
-                <div class="h-[420px] rounded-2xl overflow-hidden bg-slate-900 relative">
-                    <img src="doctor.png" alt="Dr. Santosh Singh" class="w-full h-full object-cover object-top">
-                </div>
-                <div class="p-6 text-center">
-                    <h3 class="text-xl font-bold text-white">Dr. Santosh Singh</h3>
-                    <p class="text-k_teal font-semibold text-sm mt-1">BHMS, MD (Homoeopathy)</p>
-                    <p class="text-slate-400 text-xs mt-2">Senior Clinical Consultant & Pathological Specialist</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- TRUST STRIP -->
+<section class="bg-navy text-white">
+<div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class="flex gap-3 items-center"><i class="fa-solid fa-stethoscope text-cyan text-xl"></i><span><b class="block">Personalised Care</b><small class="text-slate-400">Individual case approach</small></span></div>
+<div class="flex gap-3 items-center"><i class="fa-solid fa-location-dot text-cyan text-xl"></i><span><b class="block">Two Locations</b><small class="text-slate-400">Barhalganj & Gorakhpur</small></span></div>
+<div class="flex gap-3 items-center"><i class="fa-solid fa-laptop-medical text-cyan text-xl"></i><span><b class="block">Digital Access</b><small class="text-slate-400">Online enquiry & guidance</small></span></div>
+<div class="flex gap-3 items-center"><i class="fa-solid fa-qrcode text-cyan text-xl"></i><span><b class="block">Easy Access</b><small class="text-slate-400">Scan, visit & review</small></span></div>
+</div>
+</section>
 
-    <!-- SECTION 2: DARK STATS & CORE FEATURES GRID (Matching Reference Composition) -->
-    <section class="py-20 bg-slate-900/60 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-k_card p-8 rounded-2xl border border-white/5 hover:border-k_teal/50 transition">
-                <div class="w-12 h-12 rounded-xl bg-k_teal/10 text-k_teal flex items-center justify-center text-xl mb-6 font-bold"><i class="fa-solid fa-user-doctor"></i></div>
-                <h3 class="text-lg font-bold mb-2">Personalised Case Taking</h3>
-                <p class="text-slate-400 text-sm">Deep investigation of mental, physical, and miasmatic totality for permanent healing.</p>
-            </div>
-            <div class="bg-k_card p-8 rounded-2xl border border-white/5 hover:border-k_teal/50 transition">
-                <div class="w-12 h-12 rounded-xl bg-k_teal/10 text-k_teal flex items-center justify-center text-xl mb-6 font-bold"><i class="fa-solid fa-hospital-user"></i></div>
-                <h3 class="text-lg font-bold mb-2">Two Dedicated Locations</h3>
-                <p class="text-slate-400 text-sm">Practicing regularly at Barhalganj (Patna Chauraha) and Gorakhpur centers.</p>
-            </div>
-            <div class="bg-k_card p-8 rounded-2xl border border-white/5 hover:border-k_teal/50 transition">
-                <div class="w-12 h-12 rounded-xl bg-k_teal/10 text-k_teal flex items-center justify-center text-xl mb-6 font-bold"><i class="fa-solid fa-microchip"></i></div>
-                <h3 class="text-lg font-bold mb-2">Digital Repertorization</h3>
-                <p class="text-slate-400 text-sm">Advanced technological integration with classical Boericke & Allen keynotes.</p>
-            </div>
-        </div>
-    </section>
+<!-- DOCTOR -->
+<section id="doctor" class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-5 gap-12 items-center">
+<div class="lg:col-span-2 rounded-[35px] overflow-hidden bg-mist p-3">
+<img src="doctor.png" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=85'" class="rounded-[28px] w-full aspect-[4/5] object-cover object-top" alt="Dr. Santosh Singh">
+</div>
+<div class="lg:col-span-3">
+<p class="text-cyan font-extrabold text-sm tracking-[.2em]">MEET YOUR DOCTOR</p>
+<h2 class="font-display text-5xl mt-3 mb-4">Dr. Santosh Singh</h2>
+<p class="text-xl font-bold text-slate-600 mb-6">BHMS, MD (Homoeopathy)</p>
+<p class="text-slate-500 leading-8 max-w-2xl">A patient-focused homoeopathic consultation experience designed around detailed history-taking, individual symptoms and long-term follow-up.</p>
+<div class="grid sm:grid-cols-2 gap-4 mt-9">
+<div class="p-5 rounded-2xl bg-mist"><i class="fa-solid fa-clipboard-list text-cyan text-xl"></i><b class="block mt-3">Detailed Case Taking</b><small class="text-slate-500">History, symptoms & individual patterns.</small></div>
+<div class="p-5 rounded-2xl bg-mist"><i class="fa-solid fa-arrows-rotate text-cyan text-xl"></i><b class="block mt-3">Continuity of Care</b><small class="text-slate-500">Structured follow-up and review.</small></div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- SECTION 3: DISEASE & CONDITION SEARCH LIBRARY -->
-    <section id="conditions" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Search Diseases & <span class="text-k_teal">Conditions</span></h2>
-            <p class="text-slate-400 text-sm mb-8">Explore specialized care areas and clinical focus for chronic health concerns.</p>
-            <div class="relative max-w-xl mx-auto">
-                <i class="fa-solid fa-search absolute left-4 top-4 text-slate-400"></i>
-                <input type="text" id="conditionSearch" onkeyup="filterConditions()" placeholder="Search condition (e.g., Asthma, Skin, Migraine, Arthritis)..." class="w-full bg-k_card border border-white/10 rounded-full pl-12 pr-6 py-3.5 text-sm focus:border-k_teal outline-none shadow-lg">
-            </div>
-        </div>
+<!-- CONDITIONS -->
+<section id="conditions" class="py-24 bg-[#07131f] text-white">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+<div class="flex flex-col lg:flex-row justify-between gap-8 items-end mb-12">
+<div><p class="text-cyan font-bold tracking-[.2em] text-sm">CONDITION EXPLORER</p><h2 class="font-display text-5xl mt-3">Explore conditions & concerns</h2><p class="text-slate-400 mt-4 max-w-2xl">Search a condition to learn about it and find the right next step. Educational information only — not a diagnosis.</p></div>
+<div class="relative w-full lg:w-96"><i class="fa-solid fa-magnifying-glass absolute left-5 top-4 text-slate-500"></i><input id="conditionSearch" oninput="filterConditions()" placeholder="Search disease or symptom..." class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-5 outline-none focus:border-cyan"></div>
+</div>
+<div id="conditionGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+</div>
+</div>
+</section>
 
-        <div id="conditionGrid" class="grid md:grid-cols-3 gap-6">
-            <div class="cond-card bg-k_card p-6 rounded-2xl border border-white/5 hover:border-k_teal/50 transition" data-name="asthma respiratory allergy bronchitis">
-                <i class="fa-solid fa-lungs text-2xl text-k_teal mb-4"></i>
-                <h3 class="font-bold text-lg mb-2">Respiratory Health</h3>
-                <p class="text-slate-400 text-sm mb-4">Specialized care for chronic asthma, allergic rhinitis, and bronchial inflammation.</p>
-                <a href="#ai" class="text-xs text-k_teal font-bold uppercase tracking-wider hover:underline">Consult AI on Asthma →</a>
-            </div>
-            <div class="cond-card bg-k_card p-6 rounded-2xl border border-white/5 hover:border-k_teal/50 transition" data-name="skin psoriasis eczema dermatitis">
-                <i class="fa-solid fa-hand-dots text-2xl text-k_teal mb-4"></i>
-                <h3 class="font-bold text-lg mb-2">Skin & Dermatological Care</h3>
-                <p class="text-slate-400 text-sm mb-4">Addressing root causes of psoriasis, eczema, and chronic skin eruptions.</p>
-                <a href="#ai" class="text-xs text-k_teal font-bold uppercase tracking-wider hover:underline">Consult AI on Skin →</a>
-            </div>
-            <div class="cond-card bg-k_card p-6 rounded-2xl border border-white/5 hover:border-k_teal/50 transition" data-name="migraine headache neural neuralgia">
-                <i class="fa-solid fa-brain text-2xl text-k_teal mb-4"></i>
-                <h3 class="font-bold text-lg mb-2">Neurological & Migraines</h3>
-                <p class="text-slate-400 text-sm mb-4">Constitutional management for chronic headaches and stress disorders.</p>
-                <a href="#ai" class="text-xs text-k_teal font-bold uppercase tracking-wider hover:underline">Consult AI on Migraine →</a>
-            </div>
-            <div class="cond-card bg-k_card p-6 rounded-2xl border border-white/5 hover:border-k_teal/50 transition" data-name="arthritis joint rheumatism auto immune">
-                <i class="fa-solid fa-bone text-2xl text-k_teal mb-4"></i>
-                <h3 class="font-bold text-lg mb-2">Autoimmune & Joint Care</h3>
-                <p class="text-slate-400 text-sm mb-4">Miasmatic protocols designed for rheumatoid arthritis and joint stiffness.</p>
-                <a href="#ai" class="text-xs text-k_teal font-bold uppercase tracking-wider hover:underline">Consult AI on Joints →</a>
-            </div>
-            <div class="cond-card bg-k_card p-6 rounded-2xl border border-white/5 hover:border-k_teal/50 transition" data-name="stomach digestion gastric acidity ibs">
-                <i class="fa-solid fa-stomach text-2xl text-k_teal mb-4"></i>
-                <h3 class="font-bold text-lg mb-2">Digestive Health</h3>
-                <p class="text-slate-400 text-sm mb-4">Care for irritable bowel syndrome (IBS), chronic acidity, and constipation.</p>
-                <a href="#ai" class="text-xs text-k_teal font-bold uppercase tracking-wider hover:underline">Consult AI on Digestion →</a>
-            </div>
-            <div class="cond-card bg-k_card p-6 rounded-2xl border border-white/5 hover:border-k_teal/50 transition" data-name="children pediatric immunity wellness">
-                <i class="fa-solid fa-child text-2xl text-k_teal mb-4"></i>
-                <h3 class="font-bold text-lg mb-2">Children's Health & Immunity</h3>
-                <p class="text-slate-400 text-sm mb-4">Gentle, safe constitutional remedies to build robust natural immunity.</p>
-                <a href="#ai" class="text-xs text-k_teal font-bold uppercase tracking-wider hover:underline">Consult AI on Pediatrics →</a>
-            </div>
-        </div>
-    </section>
+<!-- SERVICES -->
+<section id="services" class="py-24 bg-mist">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+<p class="text-cyan font-extrabold text-sm tracking-[.2em]">CARE AREAS</p><h2 class="font-display text-5xl mt-3 mb-12">A premium care experience</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class="card bg-white rounded-3xl p-7"><i class="fa-solid fa-lungs text-cyan text-3xl"></i><h3 class="font-bold text-xl mt-5">Respiratory Care</h3><p class="text-slate-500 text-sm mt-3">Asthma, allergic rhinitis, recurrent respiratory concerns and chronic cough support.</p></div>
+<div class="card bg-white rounded-3xl p-7"><i class="fa-solid fa-hand-dots text-cyan text-3xl"></i><h3 class="font-bold text-xl mt-5">Skin & Hair</h3><p class="text-slate-500 text-sm mt-3">Individualised consultation for chronic skin and hair concerns.</p></div>
+<div class="card bg-white rounded-3xl p-7"><i class="fa-solid fa-stomach text-cyan text-3xl"></i><h3 class="font-bold text-xl mt-5">Digestive Health</h3><p class="text-slate-500 text-sm mt-3">Acidity, IBS-like symptoms and recurring digestive complaints.</p></div>
+<div class="card bg-white rounded-3xl p-7"><i class="fa-solid fa-heart-pulse text-cyan text-3xl"></i><h3 class="font-bold text-xl mt-5">Chronic Care</h3><p class="text-slate-500 text-sm mt-3">Long-term concerns with careful history and follow-up planning.</p></div>
+<div class="card bg-white rounded-3xl p-7"><i class="fa-solid fa-child text-cyan text-3xl"></i><h3 class="font-bold text-xl mt-5">Child Wellness</h3><p class="text-slate-500 text-sm mt-3">Age-appropriate consultation for common recurring childhood concerns.</p></div>
+<div class="card bg-white rounded-3xl p-7"><i class="fa-solid fa-person-dress text-cyan text-3xl"></i><h3 class="font-bold text-xl mt-5">Women's Health</h3><p class="text-slate-500 text-sm mt-3">Confidential, personalised consultation for women's health concerns.</p></div>
+<div class="card bg-white rounded-3xl p-7"><i class="fa-solid fa-bone text-cyan text-3xl"></i><h3 class="font-bold text-xl mt-5">Joint & Pain Care</h3><p class="text-slate-500 text-sm mt-3">Supportive consultation for recurring joint, muscular and pain complaints.</p></div>
+<div class="card bg-white rounded-3xl p-7"><i class="fa-solid fa-brain text-cyan text-3xl"></i><h3 class="font-bold text-xl mt-5">Stress & Sleep</h3><p class="text-slate-500 text-sm mt-3">A structured, individualised approach to sleep and stress-related concerns.</p></div>
+</div>
+</div>
+</section>
 
-    <!-- SECTION 4: TEAL SERVICES / SPECIALTIES GRID (Exact Kromatic Reference Block) -->
-    <section class="bg-k_teal py-20 text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-extrabold mb-4">Latest Medical Services</h2>
-                <p class="text-teal-100 text-sm">Comprehensive homoeopathic care delivered with clinical excellence at Narayan Clinic.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-k_dark rounded-2xl overflow-hidden border border-white/10">
-                    <div class="h-36 bg-slate-800 overflow-hidden"><img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover opacity-70"></div>
-                    <div class="p-5"><h4 class="font-bold mb-1">Laboratory & Diagnostics</h4><p class="text-xs text-slate-400">Pathology integration for precision case tracking.</p></div>
-                </div>
-                <div class="bg-k_dark rounded-2xl overflow-hidden border border-white/10">
-                    <div class="h-36 bg-slate-800 overflow-hidden"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover opacity-70"></div>
-                    <div class="p-5"><h4 class="font-bold mb-1">Constitutional Care</h4><p class="text-xs text-slate-400">Miasmatic deep-acting individual remedies.</p></div>
-                </div>
-                <div class="bg-k_dark rounded-2xl overflow-hidden border border-white/10">
-                    <div class="h-36 bg-slate-800 overflow-hidden"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover opacity-70"></div>
-                    <div class="p-5"><h4 class="font-bold mb-1">Online Consultation</h4><p class="text-xs text-slate-400">Secure digital case evaluation via WhatsApp.</p></div>
-                </div>
-                <div class="bg-k_dark rounded-2xl overflow-hidden border border-white/10">
-                    <div class="h-36 bg-slate-800 overflow-hidden"><img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover opacity-70"></div>
-                    <div class="p-5"><h4 class="font-bold mb-1">Chronic Pain Protocol</h4><p class="text-xs text-slate-400">Specialized long-standing pain management.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HOW IT WORKS -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+<div class="text-center mb-14"><p class="text-cyan font-bold tracking-[.2em]">PATIENT JOURNEY</p><h2 class="font-display text-5xl mt-3">Simple. Personal. Connected.</h2></div>
+<div class="grid md:grid-cols-4 gap-5">
+<div class="card rounded-3xl border p-7"><span class="text-cyan font-black text-4xl">01</span><h3 class="font-bold text-xl mt-5">Tell us</h3><p class="text-slate-500 text-sm mt-3">Share your concern through WhatsApp or appointment form.</p></div>
+<div class="card rounded-3xl border p-7"><span class="text-cyan font-black text-4xl">02</span><h3 class="font-bold text-xl mt-5">Consult</h3><p class="text-slate-500 text-sm mt-3">Discuss your history and individual symptoms with the doctor.</p></div>
+<div class="card rounded-3xl border p-7"><span class="text-cyan font-black text-4xl">03</span><h3 class="font-bold text-xl mt-5">Plan</h3><p class="text-slate-500 text-sm mt-3">Receive a personalised care plan and follow-up guidance.</p></div>
+<div class="card rounded-3xl border p-7"><span class="text-cyan font-black text-4xl">04</span><h3 class="font-bold text-xl mt-5">Follow up</h3><p class="text-slate-500 text-sm mt-3">Stay connected for review and continuity of care.</p></div>
+</div>
+</div>
+</section>
 
-    <!-- SECTION 5: NARAYAN AI HEALTH NAVIGATOR -->
-    <section id="ai" class="py-24 max-w-4xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold mb-3">Ask Narayan <span class="text-k_teal">AI Assistant</span></h2>
-            <p class="text-slate-400 text-sm">Type any disease, condition, or symptom to understand our homoeopathic approach instantly.</p>
-        </div>
-        <div class="bg-k_card border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[480px]">
-            <div id="chatWindow" class="flex-1 p-6 overflow-y-auto flex flex-col space-y-3 custom-scrollbar">
-                <div class="chat-bubble chat-bot">
-                    Welcome to Narayan Clinic AI. How can I assist you with your health concerns today? (Try typing: Asthma, Skin, Migraine...)
-                </div>
-            </div>
-            <div class="p-4 bg-slate-900 border-t border-white/10 flex gap-3">
-                <input type="text" id="aiInput" class="flex-1 bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-k_teal outline-none" placeholder="Describe symptoms or condition..." onkeypress="handleEnter(event)">
-                <button onclick="processAI()" class="bg-k_teal text-white px-6 rounded-xl font-bold hover:bg-teal-600 transition">Send</button>
-            </div>
-        </div>
-    </section>
+<!-- AI -->
+<section id="ai" class="py-24 bg-navy text-white">
+<div class="max-w-5xl mx-auto px-6">
+<div class="text-center mb-10"><span class="inline-block bg-cyan/10 text-cyan px-4 py-2 rounded-full text-xs font-bold">SIGNATURE DIGITAL FEATURE</span><h2 class="font-display text-5xl mt-5">Narayan <span class="text-cyan">AI</span></h2><p class="text-slate-400 mt-4">Ask about a disease, symptom or health topic. Educational guidance only — not diagnosis or emergency advice.</p></div>
+<div class="rounded-[30px] overflow-hidden border border-white/10 bg-[#07131f] shadow-2xl">
+<div id="chat" class="chat p-6 space-y-4 h-[390px]"><div class="bot p-4 max-w-[85%]">Hello. I’m Narayan AI. Tell me a disease or health topic and I’ll provide general educational information and suggest when professional medical evaluation may be appropriate.</div></div>
+<div class="p-4 border-t border-white/10 flex gap-3"><input id="aiInput" onkeydown="if(event.key==='Enter')askAI()" class="flex-1 bg-white/5 border border-white/10 rounded-full px-5 py-4 outline-none focus:border-cyan" placeholder="e.g. asthma, eczema, migraine..."><button onclick="askAI()" class="w-14 h-14 rounded-full bg-cyan text-ink font-bold"><i class="fa-solid fa-paper-plane"></i></button></div>
+</div>
+<p class="text-center text-xs text-slate-500 mt-4">For emergencies, contact local emergency services. Narayan AI does not replace a doctor.</p>
+</div>
+</section>
 
-    <!-- SECTION 6: RESEARCH & CLINICAL VLOGS -->
-    <section id="research" class="py-24 bg-slate-900/40 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-extrabold mb-3">Research & <span class="text-k_teal">Clinical Vlog</span></h2>
-                <p class="text-slate-400 text-sm">Educational breakdowns and case study discussions by Dr. Santosh Singh.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-k_card rounded-2xl overflow-hidden border border-white/5 group">
-                    <div class="h-48 bg-slate-900 flex items-center justify-center border-b border-white/5">
-                        <i class="fa-brands fa-youtube text-red-500 text-5xl group-hover:scale-110 transition-transform"></i>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-k_teal uppercase">Case Analysis</span>
-                        <h4 class="font-bold text-lg mt-1 mb-2">Reversing Chronic Respiratory Distress via Miasmatic Totality</h4>
-                    </div>
-                </div>
-                <div class="bg-k_card rounded-2xl overflow-hidden border border-white/5 group">
-                    <div class="h-48 bg-slate-900 flex items-center justify-center border-b border-white/5">
-                        <i class="fa-brands fa-youtube text-red-500 text-5xl group-hover:scale-110 transition-transform"></i>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-k_teal uppercase">Patient Education</span>
-                        <h4 class="font-bold text-lg mt-1 mb-2">Understanding Constitutional Homoeopathy vs Symptomatic Relief</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- RESEARCH / VLOG -->
+<section id="research" class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+<div class="flex justify-between items-end mb-12"><div><p class="text-cyan font-bold tracking-[.2em]">KNOWLEDGE HUB</p><h2 class="font-display text-5xl mt-3">Research & Vlog</h2></div><span class="hidden sm:block text-sm text-slate-500">Health education • case insights • clinic updates</span></div>
+<div class="grid md:grid-cols-3 gap-6">
+<article class="card rounded-3xl overflow-hidden bg-mist"><div class="h-44 bg-[url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80')] bg-cover bg-center"></div><div class="p-6"><span class="text-xs text-cyan font-bold">HEALTH EDUCATION</span><h3 class="font-bold text-xl mt-2">Understanding chronic symptoms</h3><p class="text-slate-500 text-sm mt-2">Educational content for patients and families.</p></div></article>
+<article class="card rounded-3xl overflow-hidden bg-mist"><div class="h-44 bg-[url('https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=80')] bg-cover bg-center"></div><div class="p-6"><span class="text-xs text-cyan font-bold">RESEARCH & VLOG</span><h3 class="font-bold text-xl mt-2">Inside a patient-first consultation</h3><p class="text-slate-500 text-sm mt-2">A transparent look at the clinic experience.</p></div></article>
+<article class="card rounded-3xl overflow-hidden bg-mist"><div class="h-44 bg-[url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=900&q=80')] bg-cover bg-center"></div><div class="p-6"><span class="text-xs text-cyan font-bold">CLINIC UPDATE</span><h3 class="font-bold text-xl mt-2">From Barhalganj to Gorakhpur</h3><p class="text-slate-500 text-sm mt-2">Stay updated with locations and consultation access.</p></div></article>
+</div>
+</div>
+</section>
 
-    <!-- SECTION 7: LOCATIONS & BOOKING -->
-    <section id="locations" class="py-24 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-            <h2 class="text-3xl font-extrabold mb-6">Two Locations.<br><span class="text-k_teal">One Standard of Care.</span></h2>
-            <div class="space-y-6 mb-8">
-                <div class="bg-k_card p-6 rounded-2xl border border-white/10">
-                    <h4 class="font-bold text-lg text-white mb-1"><i class="fa-solid fa-location-dot text-k_teal mr-2"></i> Barhalganj Clinic</h4>
-                    <p class="text-slate-400 text-sm">Patna Chauraha, Barhalganj (Gorakhpur), Uttar Pradesh</p>
-                    <p class="text-k_teal text-xs font-semibold mt-2">Available: Monday – Saturday</p>
-                </div>
-                <div class="bg-k_card p-6 rounded-2xl border border-white/10">
-                    <h4 class="font-bold text-lg text-white mb-1"><i class="fa-solid fa-location-dot text-k_teal mr-2"></i> Gorakhpur Center</h4>
-                    <p class="text-slate-400 text-sm">Main City Clinic Facility, Gorakhpur</p>
-                    <p class="text-k_teal text-xs font-semibold mt-2">Available: Other Designated Days</p>
-                </div>
-            </div>
-            <div class="text-slate-400 text-sm">
-                <p><i class="fa-solid fa-phone text-n_teal mr-2"></i> Direct Line: +91 9140192514</p>
-                <p class="mt-1"><i class="fa-solid fa-envelope text-n_teal mr-2"></i> Email: contact@narayanclinic.com</p>
-            </div>
-        </div>
-        <div id="book" class="bg-k_card p-8 rounded-3xl border border-white/10 shadow-2xl">
-            <h3 class="text-2xl font-bold mb-6">Schedule Consultation</h3>
-            <form onsubmit="handleBooking(event)" class="space-y-4">
-                <input type="text" id="pName" placeholder="Patient Full Name" class="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-sm focus:border-k_teal outline-none" required>
-                <input type="tel" id="pPhone" placeholder="Contact Number (+91 9140192514)" class="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-sm focus:border-k_teal outline-none" required>
-                <select id="pLoc" class="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-sm focus:border-k_teal outline-none text-slate-300">
-                    <option value="Barhalganj">Location: Barhalganj</option>
-                    <option value="Gorakhpur">Location: Gorakhpur</option>
-                </select>
-                <textarea id="pReason" rows="3" placeholder="Symptoms / Reason for Visit" class="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-sm focus:border-k_teal outline-none resize-none" required></textarea>
-                <button type="submit" class="w-full bg-k_teal text-white font-bold py-4 rounded-xl hover:bg-teal-600 transition shadow-lg">Connect via WhatsApp System</button>
-            </form>
-        </div>
-    </section>
+<!-- TESTIMONIALS -->
+<section class="py-24 bg-mist">
+<div class="max-w-6xl mx-auto px-6 text-center">
+<p class="text-cyan font-bold tracking-[.2em]">PATIENT VOICES</p><h2 class="font-display text-5xl mt-3 mb-12">What patients say</h2>
+<div class="grid md:grid-cols-3 gap-5 text-left">
+<div class="bg-white rounded-3xl p-7"><div class="text-cyan">★★★★★</div><p class="mt-5 text-slate-600 leading-7">“Add verified patient feedback here after receiving permission.”</p><small class="text-slate-400 block mt-5">Verified patient review</small></div>
+<div class="bg-white rounded-3xl p-7"><div class="text-cyan">★★★★★</div><p class="mt-5 text-slate-600 leading-7">“The website can showcase real Google reviews here for social proof.”</p><small class="text-slate-400 block mt-5">Google review integration</small></div>
+<div class="bg-white rounded-3xl p-7"><div class="text-cyan">★★★★★</div><p class="mt-5 text-slate-600 leading-7">“Patient stories should be added only with genuine consent.”</p><small class="text-slate-400 block mt-5">Patient story</small></div>
+</div>
+<a href="#appointment" class="inline-block mt-10 bg-navy text-white px-7 py-4 rounded-full font-bold">Start Your Consultation</a>
+</div>
+</section>
 
-    <!-- SECTION 8: FOOTER WITH QR & DEVELOPER SIGNATURE -->
-    <footer class="bg-black py-16 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 items-center mb-12 text-left">
-            <div>
-                <h3 class="font-bold text-lg mb-2 text-white">Narayan Homoeopathic Clinic</h3>
-                <p class="text-slate-400 text-sm">Led by Dr. Santosh Singh (BHMS, MD). Delivering ethical, advanced homoeopathy.</p>
-            </div>
-            <div class="text-center">
-                <h4 class="font-bold text-xs mb-3 text-k_teal uppercase tracking-widest">Scan to Visit Website</h4>
-                <div class="bg-white p-2.5 rounded-2xl inline-block shadow-2xl border-2 border-k_teal">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https://drsisodiya-xy.github.io/Narayan-Homoeopathic-clinic-/" alt="QR Code" class="w-24 h-24">
-                </div>
-            </div>
-            <div class="text-left md:text-right">
-                <h4 class="font-bold text-sm mb-2 text-white">Official Contacts</h4>
-                <p class="text-slate-400 text-xs">+91 9140192514</p>
-                <p class="text-slate-400 text-xs mt-1">contact@narayanclinic.com</p>
-            </div>
-        </div>
-        
-        <!-- DEVELOPER CREDIT -->
-        <div class="border-t border-white/10 pt-8 max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p class="text-slate-500 text-xs">&copy; 2026 Narayan Homoeopathic Clinic. All Rights Reserved.</p>
-            <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-full border border-white/10">
-                <i class="fa-solid fa-code text-k_teal text-xs"></i>
-                <span class="text-xs text-slate-300 font-extrabold uppercase tracking-widest">Designed & Created by Deepak Sisodiya</span>
-            </div>
-        </div>
-    </footer>
+<!-- LOCATIONS -->
+<section id="contact" class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+<div class="text-center mb-12"><p class="text-cyan font-bold tracking-[.2em]">VISIT NARAYAN</p><h2 class="font-display text-5xl mt-3">Two locations. One standard of care.</h2></div>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="rounded-[30px] bg-navy text-white p-8"><i class="fa-solid fa-location-dot text-cyan text-3xl"></i><h3 class="text-2xl font-bold mt-5">Barhalganj Clinic</h3><p class="text-slate-400 mt-2">Patna Chauraha, Barhalganj (Gorakhpur), Uttar Pradesh</p><div class="mt-6 flex flex-wrap gap-3"><span class="bg-white/5 px-4 py-2 rounded-full text-xs">Monday – Saturday</span><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Patna+Chauraha+Barhalganj+Gorakhpur" class="bg-cyan text-ink px-5 py-2 rounded-full text-xs font-bold">Get Directions</a></div></div>
+<div class="rounded-[30px] bg-[#07131f] text-white p-8"><i class="fa-solid fa-city text-cyan text-3xl"></i><h3 class="text-2xl font-bold mt-5">Gorakhpur</h3><p class="text-slate-400 mt-2">Gorakhpur, Uttar Pradesh</p><div class="mt-6 flex flex-wrap gap-3"><span class="bg-white/5 px-4 py-2 rounded-full text-xs">Other days</span><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gorakhpur+Uttar+Pradesh" class="bg-cyan text-ink px-5 py-2 rounded-full text-xs font-bold">Get Directions</a></div></div>
+</div>
+</div>
+</section>
 
-    <script>
-        function filterConditions() {
-            const query = document.getElementById('conditionSearch').value.toLowerCase();
-            document.querySelectorAll('.cond-card').forEach(card => {
-                card.style.display = card.getAttribute('data-name').includes(query) ? 'block' : 'none';
-            });
-        }
+<!-- APPOINTMENT -->
+<section id="appointment" class="py-24 bg-mist">
+<div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+<div><p class="text-cyan font-bold tracking-[.2em]">APPOINTMENT</p><h2 class="font-display text-5xl mt-3">Take the first step.</h2><p class="text-slate-500 leading-8 mt-5">Fill in your details and the request will open directly in WhatsApp for quick coordination.</p>
+<div class="mt-8 space-y-4"><a href="tel:+919140192514" class="flex items-center gap-4 font-bold"><span class="w-12 h-12 rounded-full bg-navy text-cyan flex items-center justify-center"><i class="fa-solid fa-phone"></i></span>+91 9140192514</a><a href="https://wa.me/919140192514" target="_blank" class="flex items-center gap-4 font-bold"><span class="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center"><i class="fa-brands fa-whatsapp"></i></span>WhatsApp Appointment</a></div></div>
+<form onsubmit="book(event)" class="bg-white rounded-[30px] p-7 lg:p-9 shadow-xl space-y-4">
+<input id="pName" required placeholder="Patient name" class="w-full p-4 rounded-xl bg-slate-50 border outline-none focus:border-cyan">
+<input id="pPhone" required type="tel" placeholder="Mobile number" class="w-full p-4 rounded-xl bg-slate-50 border outline-none focus:border-cyan">
+<select id="pLoc" class="w-full p-4 rounded-xl bg-slate-50 border outline-none"><option>Barhalganj</option><option>Gorakhpur</option></select>
+<textarea id="pReason" required rows="4" placeholder="Briefly describe your concern" class="w-full p-4 rounded-xl bg-slate-50 border outline-none focus:border-cyan"></textarea>
+<button class="w-full bg-navy text-white py-4 rounded-xl font-bold">Send Appointment Request <i class="fa-brands fa-whatsapp ml-2 text-[#25D366]"></i></button>
+</form>
+</div>
+</section>
 
-        function handleEnter(e) { if(e.key === 'Enter') processAI(); }
-        function processAI() {
-            const input = document.getElementById('aiInput');
-            const chatWindow = document.getElementById('chatWindow');
-            const q = input.value.trim();
-            if(!q) return;
+<!-- REVIEW + QR -->
+<section class="py-20 bg-navy text-white">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 items-center">
+<div class="md:col-span-2"><p class="text-cyan font-bold tracking-[.2em]">DIGITAL PRESENCE</p><h2 class="font-display text-4xl mt-3">Scan. Visit. Share your experience.</h2><p class="text-slate-400 mt-4 max-w-2xl">Place this QR at reception, prescription desk or visiting card so patients can access the clinic website instantly. Replace the review link with the clinic’s real Google review URL when available.</p><div class="flex flex-wrap gap-3 mt-7"><a href="https://www.instagram.com/" target="_blank" class="px-5 py-3 rounded-full bg-white/5"><i class="fa-brands fa-instagram mr-2"></i>Instagram</a><a href="https://www.facebook.com/" target="_blank" class="px-5 py-3 rounded-full bg-white/5"><i class="fa-brands fa-facebook mr-2"></i>Facebook</a><a href="https://www.youtube.com/" target="_blank" class="px-5 py-3 rounded-full bg-white/5"><i class="fa-brands fa-youtube mr-2"></i>YouTube</a></div></div>
+<div class="bg-white rounded-3xl p-5 text-center"><img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fdrsisodiya-xy.github.io%2FNarayan-Homoeopathic-clinic%2F" alt="Narayan Clinic QR" class="w-44 h-44 mx-auto"><b class="text-ink block mt-3">Narayan Clinic</b><small class="text-slate-500">Website QR</small></div>
+</div>
+</section>
 
-            const uDiv = document.createElement('div');
-            uDiv.className = 'chat-bubble chat-user';
-            uDiv.innerText = q;
-            chatWindow.appendChild(uDiv);
-            input.value = '';
+<!-- FOOTER -->
+<footer class="bg-[#04101a] text-slate-400 py-12">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+<div><h3 class="text-white font-extrabold tracking-widest">NARAYAN</h3><p class="text-xs text-cyan font-bold mt-1">HOMOEOPATHIC CLINIC</p><p class="text-sm mt-4">Personalised homoeopathic care by Dr. Santosh Singh, BHMS, MD.</p></div>
+<div><b class="text-white">Explore</b><div class="text-sm mt-4 space-y-2"><a class="block" href="#doctor">Doctor</a><a class="block" href="#conditions">Conditions</a><a class="block" href="#services">Care Areas</a><a class="block" href="#research">Research & Vlog</a></div></div>
+<div><b class="text-white">Clinic</b><p class="text-sm mt-4">Patna Chauraha, Barhalganj, Gorakhpur, Uttar Pradesh</p><p class="text-sm mt-2">Gorakhpur, Uttar Pradesh</p></div>
+<div><b class="text-white">Contact</b><p class="text-sm mt-4">+91 9140192514</p><a href="https://wa.me/919140192514" class="text-cyan text-sm block mt-2">WhatsApp</a></div>
+</div>
+<div class="max-w-7xl mx-auto px-6 border-t border-white/10 mt-10 pt-7 flex flex-col sm:flex-row justify-between gap-4 text-xs">
+<span>© 2026 Narayan Homoeopathic Clinic. All rights reserved.</span><span class="text-white font-bold">Designed & Created by Deepak Sisodiya</span>
+</div>
+</footer>
 
-            setTimeout(() => {
-                const bDiv = document.createElement('div');
-                bDiv.className = 'chat-bubble chat-bot';
-                bDiv.innerHTML = `<strong>Narayan AI Insight:</strong> For conditions related to <em>"${q}"</em>, Dr. Santosh Singh focuses on constitutional totality and miasmatic background rather than temporary suppression. <br><br><a href="#book" class="text-k_teal underline font-bold">Book a consultation for exact evaluation.</a>`;
-                chatWindow.appendChild(bDiv);
-                chatWindow.scrollTop = chatWindow.scrollHeight;
-            }, 1000);
-        }
+<!-- FLOATING ACTIONS -->
+<div class="fixed right-5 bottom-5 z-50 flex flex-col gap-3">
+<a href="tel:+919140192514" class="w-14 h-14 rounded-full bg-navy text-cyan shadow-xl flex items-center justify-center"><i class="fa-solid fa-phone"></i></a>
+<a href="https://wa.me/919140192514" target="_blank" class="w-14 h-14 rounded-full bg-[#25D366] text-white shadow-xl flex items-center justify-center"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+</div>
 
-        function handleBooking(e) {
-            e.preventDefault();
-            const name = document.getElementById('pName').value;
-            const phone = document.getElementById('pPhone').value;
-            const loc = document.getElementById('pLoc').value;
-            const reason = document.getElementById('pReason').value;
-            const msg = `*APPOINTMENT INTAKE*\nName: ${name}\nPhone: ${phone}\nLocation: ${loc}\nReason: ${reason}`;
-            window.open(`https://wa.me/919140192514?text=${encodeURIComponent(msg)}`);
-        }
-    </script>
+<script>
+const conditions=[
+['Asthma','Respiratory','Breathing difficulty, wheezing and recurrent respiratory symptoms.'],
+['Allergic Rhinitis','Respiratory','Sneezing, nasal congestion and allergy-related symptoms.'],
+['Eczema','Skin','Inflamed, itchy or recurrent skin symptoms.'],
+['Psoriasis','Skin','A chronic inflammatory skin condition requiring professional evaluation.'],
+['Migraine','Neurology','Recurring headache patterns that may need clinical assessment.'],
+['Acidity / GERD','Digestive','Heartburn, reflux and upper digestive symptoms.'],
+['IBS','Digestive','Recurring abdominal discomfort and bowel habit changes.'],
+['PCOS','Women’s Health','A hormonal condition requiring comprehensive medical assessment.'],
+['Arthritis','Joint Care','Joint pain, stiffness and inflammatory symptoms.'],
+['Back Pain','Pain Care','Recurring or persistent back and musculoskeletal discomfort.'],
+['Insomnia','Sleep','Difficulty falling asleep, staying asleep or unrefreshing sleep.'],
+['Anxiety / Stress','Wellness','Stress-related symptoms that may benefit from professional support.'],
+['Recurrent Infections','General','Frequent infections should be assessed for underlying causes.'],
+['Hair Fall','Skin & Hair','Hair shedding has many possible causes and needs assessment.'],
+['Child Wellness','Pediatrics','Common recurring childhood health concerns.'],
+['Chronic Conditions','Chronic Care','Long-term symptoms requiring individualised follow-up.']
+];
+function renderConditions(list=conditions){
+const g=document.getElementById('conditionGrid');g.innerHTML='';
+list.forEach((c,i)=>{g.innerHTML+=`<button onclick="conditionInfo(${i})" class="card text-left bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-cyan/50"><span class="text-cyan text-xs font-bold">${c[1].toUpperCase()}</span><h3 class="font-bold text-lg mt-3">${c[0]}</h3><p class="text-slate-400 text-xs mt-2 line-clamp-2">${c[2]}</p><span class="text-cyan text-xs font-bold mt-4 inline-block">Explore →</span></button>`})
+}
+function filterConditions(){let q=document.getElementById('conditionSearch').value.toLowerCase();renderConditions(conditions.filter(c=>c.join(' ').toLowerCase().includes(q)))}
+function conditionInfo(i){let c=conditions[i];alert(c[0]+'\\n\\n'+c[2]+'\\n\\nThis page is for general education and does not provide diagnosis or treatment. Please consult a qualified clinician for personal medical advice.')}
+renderConditions();
+
+const fallback={
+'asthma':'Asthma can cause episodic wheeze, cough, chest tightness and breathlessness. Symptoms can be serious. A clinician can assess severity and an appropriate evidence-based treatment plan.',
+'eczema':'Eczema commonly causes itchy, inflamed and dry skin. Triggers and severity vary. Persistent or severe symptoms should be assessed by a clinician.',
+'migraine':'Migraine is a recurrent headache disorder that can include nausea and sensitivity to light or sound. New, sudden or unusually severe headache needs urgent medical assessment.'
+};
+function askAI(){
+const input=document.getElementById('aiInput'),q=input.value.trim();if(!q)return;
+const chat=document.getElementById('chat');chat.innerHTML+=`<div class="user p-4 max-w-[85%] ml-auto">${escapeHtml(q)}</div>`;
+input.value='';
+setTimeout(()=>{let key=Object.keys(fallback).find(k=>q.toLowerCase().includes(k));let ans=key?fallback[key]:'I can provide general educational information about common health conditions. For a personal diagnosis, treatment or prescription, please consult Dr. Santosh Singh or another qualified healthcare professional.';chat.innerHTML+=`<div class="bot p-4 max-w-[85%]">${ans}</div>`;chat.scrollTop=chat.scrollHeight},500)
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function book(e){e.preventDefault();let n=document.getElementById('pName').value,p=document.getElementById('pPhone').value,l=document.getElementById('pLoc').value,r=document.getElementById('pReason').value;let msg=`*NARAYAN CLINIC APPOINTMENT*%0A%0A*Patient:* ${encodeURIComponent(n)}%0A*Phone:* ${encodeURIComponent(p)}%0A*Location:* ${encodeURIComponent(l)}%0A*Concern:* ${encodeURIComponent(r)}`;window.open('https://wa.me/919140192514?text='+msg,'_blank')}
+</script>
 </body>
 </html>
-
