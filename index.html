@@ -31,8 +31,8 @@ html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',sans-serif;back
 <header class="fixed top-0 left-0 right-0 z-50">
 <nav class="glass mx-3 mt-3 rounded-2xl px-5 lg:px-10 py-3 flex items-center justify-between shadow-lg">
 <a href="#home" class="flex items-center gap-3">
-<span class="w-11 h-11 rounded-xl bg-navy text-cyan flex items-center justify-center"><img src="clinic-logo.png" class="w-16 h-16 object-contain" alt="Narayan Homoeopathic Clinic"></span>
-<span><b class="block tracking-[.18em] text-sm">NARAYAN</b><small class="text-cyan font-bold tracking-widest">HOMOEOPATHIC CLINIC</small></span>
+<span class="w-11 h-11 rounded-none bg-transparent text-cyan flex items-center justify-center"><img src="clinic-logo.png" class="w-16 h-16 object-contain" alt="Narayan Homoeopathic Clinic"></span>
+<span><b class="block tracking-[.18em] text-sm text-black">NARAYAN</b><small class="text-black font-bold tracking-widest">HOMOEOPATHIC CLINIC</small></span>
 </a>
 <div class="hidden lg:flex gap-7 text-sm font-semibold">
 <a href="#home">Home</a><a href="#doctor">Doctor</a><a href="#conditions">Conditions</a><a href="#services">Care</a><a href="#ai">Narayan AI</a><a href="#research">Research</a><a href="#contact">Contact</a>
@@ -60,9 +60,8 @@ html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',sans-serif;back
 </div>
 <div class="relative">
 <div class="absolute -inset-5 rounded-[40px] bg-cyan/10 blur-3xl"></div>
-<div class="relative rounded-[38px] overflow-hidden border border-white/10 bg-slate-800/50 shadow-2xl min-h-[520px]">
-<img src="doctor.png" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=85'" alt="Dr. Santosh Kumar Singh" class="w-full h-auto object-contain">
-<div class="absolute left-5 -top-28 glass text-ink rounded-2xl px-5 py-4"><b>Dr. Santosh Kumar Singh</b><br><small>BHMS M.D. (HOM.) Assistant Professor<br>SHMC, Gorakhpur</small></div>
+<div class="relative overflow-visible bg-transparent min-h-[520px]">
+<img src="doctor.png" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=85'" alt="Dr. Santosh Kumar Singh" class="w-full h-auto object-cover">
 </div>
 </div>
 </div>
@@ -177,16 +176,6 @@ html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',sans-serif;back
 </section>
 
 <!-- LOCATIONS -->
-<section id="contact" class="py-24 bg-white">
-<div class="max-w-7xl mx-auto px-6 lg:px-10">
-<div class="text-center mb-12"><p class="text-white font-bold tracking-[.2em]">VISIT NARAYAN</p><h2 class="font-display text-5xl mt-3">Two locations. One standard of care.</h2></div>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="rounded-[30px] bg-navy text-white p-8"><i class="fa-solid fa-location-dot text-cyan text-3xl"></i><h3 class="text-2xl font-bold mt-5">Gorakhpur Clinic</h3><p class="text-slate-400 mt-2">Patna Chauraha, Barhalganj (Gorakhpur), Uttar Pradesh</p><div class="mt-6 flex flex-wrap gap-3"><span class="bg-white/5 px-4 py-2 rounded-full text-xs">Monday – Saturday</span><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Patna+Chauraha+Barhalganj+Gorakhpur" class="bg-cyan text-ink px-5 py-2 rounded-full text-xs font-bold">Get Directions</a></div></div>
-<div class="rounded-[30px] bg-[#07131f] text-white p-8"><i class="fa-solid fa-city text-cyan text-3xl"></i><h3 class="text-2xl font-bold mt-5">Barhalganj</h3><p class="text-slate-400 mt-2">Gorakhpur, Uttar Pradesh</p><div class="mt-6 flex flex-wrap gap-3"><span class="bg-white/5 px-4 py-2 rounded-full text-xs">Other days</span><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gorakhpur+Uttar+Pradesh" class="bg-cyan text-ink px-5 py-2 rounded-full text-xs font-bold">Get Directions</a></div></div>
-</div>
-</div>
-</section>
-
 <!-- APPOINTMENT -->
 <section id="appointment" class="py-24 bg-mist">
 <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
